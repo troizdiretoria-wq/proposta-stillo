@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17181a">
+  <meta name="description" content="Proposta comercial da Tempo Recorde para uma plataforma completa de vendas de materiais escolares.">
+  <title>Proposta Comercial — Plataforma de E-commerce Escolar</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317181a'/%3E%3Cpath d='M13 18h38v9H37v25H27V27H13z' fill='%23a8f000'/%3E%3C/svg%3E">
+  <style>
+    :root{--ink:#18191b;--muted:#858892;--line:#dfe1e5;--soft:#f5f6f7;--lime:#a8f000;--lime-soft:#efffce;--white:#fff;--radius:22px;--shadow:0 22px 70px rgba(20,21,23,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--white);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .shell{width:min(1180px,calc(100% - 48px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .topbar-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;font-size:.85rem;font-weight:900;letter-spacing:.04em}.brand-dot{width:9px;height:9px;background:var(--lime);border-radius:99px}
+    .nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    .print-btn{border:0;background:var(--ink);color:#fff;border-radius:999px;padding:12px 18px;cursor:pointer;font-weight:800;transition:.2s ease}.print-btn:hover{background:#303236;transform:translateY(-1px)}
+    section{scroll-margin-top:100px}
+    .hero{padding:92px 0 58px}
+    .eyebrow{display:flex;align-items:center;gap:13px;color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.eyebrow:before{content:"";width:34px;height:4px;background:var(--lime)}
+    h1{font-size:clamp(3.2rem,7.5vw,6.85rem);line-height:.86;letter-spacing:-.065em;margin:38px 0 52px;max-width:940px;text-transform:uppercase}.gray{color:#90939b}
+    .meta-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px;margin-bottom:34px}.meta-label{display:block;color:var(--muted);font-size:.75rem;font-weight:800;text-transform:uppercase;margin-bottom:10px}.meta-value{font-size:1.25rem;font-weight:800}
+    .solution-bar{display:grid;grid-template-columns:155px 1fr auto;align-items:center;gap:18px;padding:22px 30px;background:var(--ink);color:#fff;border-radius:18px}.solution-bar small{color:var(--lime);font-weight:900;text-transform:uppercase}.solution-bar strong{font-size:1.1rem;letter-spacing:.015em}.solution-bar span{color:#afb1b6;font-size:.82rem}
+    .section{padding:84px 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:1fr 1.55fr;gap:50px;margin-bottom:42px}.kicker{color:var(--muted);font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.section h2{font-size:clamp(2rem,4.3vw,4.3rem);line-height:.98;letter-spacing:-.05em;margin:14px 0 0;max-width:620px}.lead{font-size:1.15rem;color:#5e6168;margin:2px 0 0;max-width:620px}
+    .product-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.tag{border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-weight:700;font-size:.82rem;background:#fff}
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:24px}.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:34px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between}.price-card.featured{background:var(--lime-soft);border-color:#cfe39f}.price-top{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.78rem;font-weight:900;text-transform:uppercase}.pill{background:var(--lime);color:var(--ink);border-radius:99px;padding:5px 10px}.price{font-weight:900;font-size:clamp(2.4rem,5vw,4.7rem);letter-spacing:-.06em;line-height:1;margin:32px 0 12px}.price-note{color:#65686f;margin:0;max-width:380px}
+    .flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.flow-card{border-radius:var(--radius);padding:36px;border:1px solid var(--line);background:#fff}.flow-card.dark{background:var(--ink);color:#fff;border-color:var(--ink)}.flow-card .number{display:flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:50%;background:var(--lime);font-weight:900;margin-bottom:64px}.flow-card h3{font-size:2rem;line-height:1.05;letter-spacing:-.04em;margin:0 0 14px}.flow-card p{color:var(--muted);margin:0 0 28px}.flow-card.dark p{color:#b6b8bd}
+    .steps{list-style:none;padding:0;margin:0}.steps li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:11px 0;border-top:1px solid var(--line);font-weight:700;font-size:.9rem}.dark .steps li{border-color:#33363a}.check{color:#75a900;font-weight:900}.dark .check{color:var(--lime)}
+    .choice{margin-top:26px;padding:24px;border:1px solid var(--line);border-radius:18px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;text-align:center;font-weight:900}.choice span:nth-child(2){color:var(--muted);font-size:.72rem;text-transform:uppercase}.choice .choice-item{background:var(--soft);padding:18px;border-radius:12px}.choice .choice-item:last-child{background:var(--lime-soft)}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.pillar{border:1px solid var(--line);border-radius:18px;padding:26px;min-height:190px;transition:.25s ease}.pillar:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c9cbd0}.pillar:nth-child(2){background:var(--lime-soft);border-color:#d7e9b4}.pillar-num{color:var(--muted);font-size:.75rem;font-weight:900}.pillar h3{font-size:1.18rem;margin:38px 0 8px}.pillar p{color:#6b6e75;font-size:.9rem;margin:0}
+    .automation{background:var(--ink);color:#fff;border-radius:30px;padding:54px}.automation h2{margin-top:0}.automation p{color:#b6b8bd}.automation-line{display:grid;grid-template-columns:repeat(6,1fr);margin-top:44px}.auto-step{position:relative;padding:0 15px;border-left:1px solid #3b3d41;min-height:105px}.auto-step:before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--lime);margin-bottom:20px}.auto-step strong{display:block;font-size:.85rem}.auto-step small{display:block;color:#8e9198;margin-top:5px}
+    .pages-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.page-item{padding:22px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-weight:750}.page-item:nth-child(3n){border-right:0}.page-item:nth-last-child(-n+2){border-bottom:0}.page-item span{color:#9ba000;margin-right:11px;font-size:.75rem}
+    .experience{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}.big-card{background:var(--lime-soft);border:1px solid #d7e9b4;border-radius:var(--radius);padding:42px}.big-card h3{font-size:clamp(2rem,4vw,3.8rem);line-height:1;letter-spacing:-.05em;margin:0 0 20px}.big-card p{max-width:590px;color:#555961}.device-card{background:var(--soft);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;justify-content:space-between}.device-icon{width:54px;height:78px;border:3px solid var(--ink);border-radius:10px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:7px}.device-icon:after{content:"";width:15px;height:3px;background:var(--ink);border-radius:3px}.device-card strong{font-size:1.45rem;line-height:1.1}
+    .closing{padding:96px 0 110px}.closing-box{background:var(--ink);color:#fff;border-radius:30px;padding:clamp(38px,7vw,76px);position:relative;overflow:hidden}.closing-box:after{content:"";position:absolute;right:-120px;bottom:-180px;width:420px;height:420px;border:82px solid var(--lime);border-radius:50%;opacity:.95}.closing-box>*{position:relative;z-index:1}.closing-box h2{font-size:clamp(2.6rem,6vw,5.5rem);max-width:780px;margin:0 0 26px}.closing-box p{color:#bfc1c6;max-width:610px;font-size:1.08rem}.closing-actions{display:flex;align-items:center;gap:14px;margin-top:40px}.cta{border:0;border-radius:999px;background:var(--lime);color:var(--ink);padding:15px 22px;font-weight:900;cursor:pointer}.subtle{font-size:.8rem;color:#90939b}
+    footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.78rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer-page{display:flex;align-items:center;gap:10px}.footer-page:before{content:"";width:26px;height:3px;background:var(--lime)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:800px){.shell{width:min(100% - 30px,680px)}.nav a{display:none}.topbar-inner{height:68px}.hero{padding:62px 0 44px}h1{font-size:clamp(3rem,15vw,5rem);margin:30px 0 42px}.meta-grid,.section-head,.pricing,.flow-grid,.experience{grid-template-columns:1fr}.meta-grid{gap:20px}.solution-bar{grid-template-columns:1fr}.solution-bar span{display:none}.section{padding:62px 0}.section-head{gap:24px}.pillars,.pages-grid{grid-template-columns:1fr}.page-item,.page-item:nth-child(3n),.page-item:nth-last-child(-n+2){border-right:0;border-bottom:1px solid var(--line)}.page-item:last-child{border-bottom:0}.automation{padding:34px 26px}.automation-line{grid-template-columns:1fr 1fr;gap:26px 0}.choice{grid-template-columns:1fr}.closing{padding:66px 0}.closing-box:after{width:270px;height:270px;border-width:54px;right:-150px;bottom:-130px}.footer-inner{flex-direction:column}.price-card{min-height:225px}}
+    @media print{.topbar,.closing-actions{display:none}.shell{width:100%}.hero{padding-top:40px}.section{break-inside:avoid;padding:42px 0}.reveal{opacity:1;transform:none}.closing{padding-bottom:30px}.closing-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Tempo Recorde — início">TEMPO RECORDE <span class="brand-dot"></span></a>
+      <nav class="nav" aria-label="Navegação principal"><a href="#solucao">Solução</a><a href="#escopo">Escopo</a><a href="#investimento">Investimento</a><button class="print-btn" type="button" onclick="window.print()">Imprimir proposta</button></nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero shell">
+      <div class="eyebrow">Proposta comercial</div>
+      <h1>PLATAFORMA DE<br><span class="gray">E-COMMERCE ESCOLAR</span></h1>
+      <div class="meta-grid">
+        <div><span class="meta-label">Empresa</span><span class="meta-value">Tempo Recorde</span></div>
+        <div><span class="meta-label">Data</span><span class="meta-value">14.09.2026</span></div>
+        <div><span class="meta-label">Projeto</span><span class="meta-value">Plataforma de vendas</span></div>
+      </div>
+      <div class="solution-bar"><small>Solução</small><strong>E-commerce + pagamento + automação</strong><span>Do catálogo à confirmação do pedido</span></div>
+    </section>
+
+    <section class="section" id="solucao">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="kicker">01 — Visão geral</div><h2>UMA OPERAÇÃO COMPLETA, NÃO APENAS UM SITE.</h2></div>
+          <div><p class="lead">Desenvolvimento de uma plataforma profissional para centralizar a venda de materiais e produtos escolares, atendendo compras convencionais e beneficiários do DUEPay.</p><div class="product-tags"><span class="tag">Materiais</span><span class="tag">Cadernos</span><span class="tag">Mochilas</span><span class="tag">Estojos</span><span class="tag">Uniformes</span><span class="tag">Acessórios</span></div></div>
+        </div>
+        <div class="choice reveal"><div class="choice-item">Comprar com meu próprio dinheiro</div><span>ou</span><div class="choice-item">Comprar utilizando DUEPay</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head reveal"><div><div class="kicker">02 — Jornadas de compra</div><h2>DOIS FLUXOS. UMA EXPERIÊNCIA SIMPLES.</h2></div><p class="lead">A modalidade é escolhida logo no início. Cada público segue por um processo claro, com checkout e pagamento adaptados à sua necessidade.</p></div>
+        <div class="flow-grid">
+          <article class="flow-card reveal"><div class="number">01</div><h3>Recursos próprios</h3><p>Experiência de e-commerce tradicional, rápida e intuitiva.</p><ul class="steps"><li><span class="check">✓</span><span>Navegar pelo catálogo e pelas categorias</span></li><li><span class="check">✓</span><span>Visualizar produtos e selecionar variações</span></li><li><span class="check">✓</span><span>Adicionar ao carrinho e conferir o pedido</span></li><li><span class="check">✓</span><span>Informar dados e pagar online</span></li><li><span class="check">✓</span><span>Receber a confirmação da compra</span></li></ul></article>
+          <article class="flow-card dark reveal"><div class="number">02</div><h3>Benefício DUEPay</h3><p>Jornada acessível para responsáveis que utilizam o crédito disponibilizado pela Prefeitura de São Paulo.</p><ul class="steps"><li><span class="check">✓</span><span>Identificar rapidamente a opção DUEPay</span></li><li><span class="check">✓</span><span>Escolher produtos e acompanhar o total</span></li><li><span class="check">✓</span><span>Prosseguir pelo fluxo específico do benefício</span></li><li><span class="check">✓</span><span>Finalizar o pedido com segurança</span></li><li><span class="check">✓</span><span>Receber a confirmação da compra</span></li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="escopo">
+      <div class="shell">
+        <div class="section-head reveal"><div><div class="kicker">03 — Escopo</div><h2>SEIS PILARES DA SOLUÇÃO.</h2></div><p class="lead">Estrutura preparada para organizar a operação, simplificar a compra e acompanhar o crescimento da loja.</p></div>
+        <div class="pillars">
+          <article class="pillar reveal"><span class="pillar-num">01</span><h3>Desenvolvimento</h3><p>Criação da plataforma e das páginas necessárias para o funcionamento da loja.</p></article>
+          <article class="pillar reveal"><span class="pillar-num">02</span><h3>E-commerce</h3><p>Produtos, categorias, variações, carrinho e processo completo de compra.</p></article>
+          <article class="pillar reveal"><span class="pillar-num">03</span><h3>Fluxo convencional</h3><p>Jornada para clientes que pagarão utilizando recursos próprios.</p></article>
+          <article class="pillar reveal"><span class="pillar-num">04</span><h3>Fluxo DUEPay</h3><p>Experiência específica para utilização do benefício disponibilizado pela Prefeitura.</p></article>
+          <article class="pillar reveal"><span class="pillar-num">05</span><h3>Automação</h3><p>Integração entre compra, pagamento, registro do pedido e confirmação.</p></article>
+          <article class="pillar reveal"><span class="pillar-num">06</span><h3>Responsividade e UX</h3><p>Interface clara em computadores, tablets e, principalmente, smartphones.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="automation reveal"><div class="kicker">04 — Automação de pagamento</div><h2>UMA JORNADA CONECTADA DO INÍCIO AO FIM.</h2><p>O processo será estruturado para reduzir tarefas manuais. O fluxo DUEPay respeitará as possibilidades técnicas oferecidas pelo programa e pela operação da empresa.</p><div class="automation-line"><div class="auto-step"><strong>Escolha</strong><small>Produtos</small></div><div class="auto-step"><strong>Carrinho</strong><small>Pedido</small></div><div class="auto-step"><strong>Dados</strong><small>Cliente</small></div><div class="auto-step"><strong>Modalidade</strong><small>Pagamento</small></div><div class="auto-step"><strong>Registro</strong><small>Automático</small></div><div class="auto-step"><strong>Confirmação</strong><small>Compra</small></div></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head reveal"><div><div class="kicker">05 — Estrutura</div><h2>PRINCIPAIS ÁREAS DA PLATAFORMA.</h2></div><p class="lead">Uma arquitetura objetiva para apresentar os produtos, conduzir a compra e oferecer suporte ao cliente.</p></div>
+        <div class="pages-grid reveal"><div class="page-item"><span>01</span>Página inicial</div><div class="page-item"><span>02</span>Catálogo e categorias</div><div class="page-item"><span>03</span>Página de produto</div><div class="page-item"><span>04</span>Carrinho</div><div class="page-item"><span>05</span>Checkout e pagamento</div><div class="page-item"><span>06</span>Fluxo DUEPay</div><div class="page-item"><span>07</span>Confirmação do pedido</div><div class="page-item"><span>08</span>Entrega ou retirada</div><div class="page-item"><span>09</span>Guia de compra DUEPay</div><div class="page-item"><span>10</span>Contato e atendimento</div><div class="page-item"><span>11</span>Políticas da loja</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell experience">
+        <article class="big-card reveal"><div class="kicker">06 — Experiência do usuário</div><h3>COMPRA FÁCIL PARA QUEM NÃO QUER COMPLICAÇÃO.</h3><p>Design profissional, comunicação clara, poucas etapas e destaque visual para o DUEPay. A interface será organizada para pessoas com diferentes níveis de familiaridade com tecnologia.</p></article>
+        <article class="device-card reveal"><div class="device-icon" aria-hidden="true"></div><div><span class="meta-label">Prioridade</span><strong>Experiência pensada primeiro para celular.</strong></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="investimento">
+      <div class="shell">
+        <div class="section-head reveal"><div><div class="kicker">07 — Investimento</div><h2>CONDIÇÕES COMERCIAIS.</h2></div><p class="lead">Escolha a condição que melhor se adapta ao projeto. O pagamento à vista é realizado no início do desenvolvimento.</p></div>
+        <div class="pricing">
+          <article class="price-card featured reveal"><div class="price-top"><span>Pagamento à vista</span><span class="pill">Melhor condição</span></div><div><div class="price">R$ 2.700</div><p class="price-note">Pagamento integral no início do projeto.</p></div></article>
+          <article class="price-card reveal"><div class="price-top"><span>Pagamento parcelado</span><span>2 parcelas</span></div><div><div class="price">R$ 3.000</div><p class="price-note">Em 2x no PIX ou no cartão de crédito, com os juros aplicados pela plataforma.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="shell"><div class="closing-box reveal"><div class="kicker">Tempo Recorde</div><h2>UMA PLATAFORMA PRONTA PARA VENDER, AUTOMATIZAR E CRESCER.</h2><p>A solução une e-commerce, experiência de compra, pagamento e automação em uma operação profissional, simples e segura.</p><div class="closing-actions"><button class="cta" type="button" onclick="window.print()">Salvar ou imprimir proposta</button><span class="subtle">Proposta comercial • 14.09.2026</span></div></div></div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>TEMPO RECORDE • PROPOSTA COMERCIAL</span><span>PLATAFORMA DE E-COMMERCE ESCOLAR</span><span class="footer-page">01</span></div></footer>
+  <script>
+    const observer=new IntersectionObserver((entries)=>entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element));
+  </script>
+</body>
+</html>
