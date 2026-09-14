@@ -14,11 +14,15 @@
     :root{--ink:#18191b;--muted:#858892;--line:#dfe1e5;--soft:#f5f6f7;--lime:#a8f000;--lime-soft:#efffce;--white:#fff;--radius:22px;--shadow:0 22px 70px rgba(20,21,23,.08)}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--white);color:var(--ink);font-family:'Montserrat',Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    body{margin:0;overflow-x:hidden;background:var(--white);color:var(--ink);font-family:'Montserrat',Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    main,section,header,footer,.shell,.section-head>*,.meta-grid>*,.flow-grid>*,.pricing>*,.pillars>*,.experience>*{min-width:0}
+    img,svg{display:block;max-width:100%;height:auto}
+    h1,h2,h3{max-width:100%;text-wrap:balance}.section h2,.closing-box h2,.flow-card h3,.device-card strong{overflow-wrap:anywhere}p{text-wrap:pretty}
     a{color:inherit;text-decoration:none}
     button{font:inherit}
     .shell{width:min(1180px,calc(100% - 48px));margin:auto}
-    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);animation:headerIn .65s cubic-bezier(.2,.8,.2,1) both}
+    .scroll-progress{position:absolute;left:0;bottom:-1px;width:0;height:3px;background:var(--lime);transform-origin:left center;will-change:width}
     .topbar-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:13px;font-size:.85rem;font-weight:900;letter-spacing:.04em}.brand-dot{width:9px;height:9px;background:var(--lime);border-radius:99px}
     .nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
@@ -44,6 +48,34 @@
     footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.78rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer-page{display:flex;align-items:center;gap:10px}.footer-page:before{content:"";width:26px;height:3px;background:var(--lime)}
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
     @media(max-width:800px){.shell{width:min(100% - 30px,680px)}.nav a{display:none}.topbar-inner{height:68px}.hero{padding:62px 0 44px}h1{font-size:clamp(3rem,15vw,5rem);margin:30px 0 42px}.meta-grid,.section-head,.pricing,.flow-grid,.experience{grid-template-columns:1fr}.meta-grid{gap:20px}.solution-bar{grid-template-columns:1fr}.solution-bar span{display:none}.section{padding:62px 0}.section-head{gap:24px}.pillars,.pages-grid{grid-template-columns:1fr}.page-item,.page-item:nth-child(3n),.page-item:nth-last-child(-n+2){border-right:0;border-bottom:1px solid var(--line)}.page-item:last-child{border-bottom:0}.automation{padding:34px 26px}.automation-line{grid-template-columns:1fr 1fr;gap:26px 0}.choice{grid-template-columns:1fr}.closing{padding:66px 0}.closing-box:after{width:270px;height:270px;border-width:54px;right:-150px;bottom:-130px}.footer-inner{flex-direction:column}.price-card{min-height:225px}}
+    /* Motion e proteções responsivas */
+    .reveal{opacity:0;transform:translateY(24px) scale(.992);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--reveal-delay,0ms)}
+    .reveal.visible{opacity:1;transform:none}
+    .hero .eyebrow{animation:heroIn .65s .08s cubic-bezier(.2,.8,.2,1) both}.hero h1{animation:heroIn .8s .16s cubic-bezier(.2,.8,.2,1) both}.hero .meta-grid{animation:heroIn .8s .26s cubic-bezier(.2,.8,.2,1) both}.hero .solution-bar{animation:heroIn .85s .36s cubic-bezier(.2,.8,.2,1) both}
+    .pillar,.price-card,.flow-card,.big-card,.device-card,.solution-bar,.choice-item{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease}
+    .pillar:hover,.price-card:hover,.flow-card:hover,.big-card:hover,.device-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .cta,.print-btn{position:relative;overflow:hidden;transition:transform .25s ease,background-color .25s ease}.cta:after,.print-btn:after{content:"";pointer-events:none;position:absolute;inset:-120% auto -120% -35%;width:22%;background:rgba(255,255,255,.28);transform:rotate(18deg) translateX(-260%);transition:transform .6s ease}.cta:hover:after,.print-btn:hover:after{transform:rotate(18deg) translateX(760%)}.cta:hover{transform:translateY(-2px)}
+    @keyframes headerIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+    @keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @media(max-width:980px) and (min-width:801px){.section-head{grid-template-columns:minmax(0,1fr);gap:26px}.automation-line{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 0}.pages-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-item,.page-item:nth-child(3n),.page-item:nth-last-child(-n+2){border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.page-item:nth-child(2n){border-right:0}.page-item:last-child{border-bottom:0}.nav a{display:none}}
+    @media(max-width:800px){
+      .shell{width:calc(100% - 30px);max-width:680px}
+      .topbar-inner{height:68px;gap:10px}.brand{font-size:.75rem;gap:8px;white-space:nowrap}.brand-dot{width:7px;height:7px}.nav{margin-left:auto;gap:0}.print-btn{padding:10px 13px;font-size:.72rem;white-space:nowrap}
+      .hero{padding:54px 0 40px}.hero h1{font-size:clamp(2.35rem,12.8vw,4rem);line-height:.92;letter-spacing:-.052em;margin:28px 0 38px;overflow-wrap:anywhere}.eyebrow{font-size:.72rem}.eyebrow:before{width:26px}
+      h2,h3,.meta-value,.solution-bar strong,.price,.choice-item{max-width:100%;overflow-wrap:anywhere}
+      .meta-grid,.section-head,.pricing,.flow-grid,.experience{grid-template-columns:minmax(0,1fr)}.meta-grid{gap:18px}.meta-value{font-size:1.08rem}
+      .solution-bar{grid-template-columns:minmax(0,1fr);padding:20px 22px;gap:8px}.solution-bar strong{font-size:1rem}
+      .section{padding:58px 0}.section-head{gap:22px;margin-bottom:32px}.section h2{font-size:clamp(1.85rem,10vw,3rem);line-height:1.02}.lead{font-size:1rem}
+      .pillars,.pages-grid{grid-template-columns:minmax(0,1fr)}.pillar{min-height:0}.pillar h3{margin-top:26px}
+      .flow-card,.price-card,.big-card,.device-card{padding:28px}.flow-card .number{margin-bottom:42px}.flow-card h3{font-size:1.7rem}.steps li{grid-template-columns:30px minmax(0,1fr)}.price-top{align-items:flex-start;flex-direction:column;gap:8px}
+      .price-card{min-height:215px}.price{font-size:clamp(2.45rem,13vw,3.8rem)}
+      .automation{padding:32px 22px;border-radius:22px}.automation h2{font-size:clamp(1.8rem,9.5vw,2.8rem)}.automation-line{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px 0}.auto-step{padding-right:8px;overflow-wrap:anywhere}
+      .choice{grid-template-columns:minmax(0,1fr);padding:18px}.choice-item{padding:16px 12px}
+      .closing{padding:62px 0}.closing-box{border-radius:22px}.closing-box h2{font-size:clamp(2rem,10.5vw,3.4rem);overflow-wrap:anywhere}.closing-box:after{width:260px;height:260px;border-width:50px;right:-155px;bottom:-135px}.closing-actions{align-items:flex-start;flex-direction:column}.cta{max-width:100%;white-space:normal;text-align:center}
+      .footer-inner{flex-direction:column}.footer-inner span{overflow-wrap:anywhere}
+    }
+    @media(max-width:420px){.shell{width:calc(100% - 22px)}.topbar-inner{gap:7px}.brand{font-size:.68rem}.print-btn{padding:9px 10px;font-size:.66rem}.hero h1{font-size:clamp(2.08rem,12.2vw,3.2rem)}.automation-line{grid-template-columns:minmax(0,1fr)}.auto-step{min-height:82px}.product-tags{gap:7px}.tag{padding:8px 10px}.flow-card,.price-card,.big-card,.device-card{padding:23px}.closing-box{padding:32px 24px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.scroll-progress{display:none}}
     @media print{.topbar,.closing-actions{display:none}.shell{width:100%}.hero{padding-top:40px}.section{break-inside:avoid;padding:42px 0}.reveal{opacity:1;transform:none}.closing{padding-bottom:30px}.closing-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
   </style>
 </head>
@@ -53,6 +85,7 @@
       <a class="brand" href="#inicio" aria-label="Tempo Recorde — início">TEMPO RECORDE <span class="brand-dot"></span></a>
       <nav class="nav" aria-label="Navegação principal"><a href="#solucao">Solução</a><a href="#escopo">Escopo</a><a href="#investimento">Investimento</a><button class="print-btn" type="button" onclick="window.print()">Imprimir proposta</button></nav>
     </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
   </header>
 
   <main id="inicio">
@@ -138,8 +171,21 @@
 
   <footer><div class="shell footer-inner"><span>TEMPO RECORDE • PROPOSTA COMERCIAL</span><span>PLATAFORMA DE E-COMMERCE ESCOLAR</span><span class="footer-page">01</span></div></footer>
   <script>
-    const observer=new IntersectionObserver((entries)=>entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element));
+    const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealElements=[...document.querySelectorAll('.reveal')];
+    revealElements.forEach((element,index)=>element.style.setProperty('--reveal-delay',`${(index%3)*70}ms`));
+    if(reducedMotion){
+      revealElements.forEach((element)=>element.classList.add('visible'));
+    }else{
+      const observer=new IntersectionObserver((entries)=>entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -35px'});
+      revealElements.forEach((element)=>observer.observe(element));
+    }
+    const progress=document.querySelector('.scroll-progress');
+    let ticking=false;
+    const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=`${max>0?Math.min(100,(window.scrollY/max)*100):0}%`;ticking=false};
+    addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateProgress);ticking=true}},{passive:true});
+    addEventListener('resize',updateProgress,{passive:true});
+    updateProgress();
   </script>
 </body>
 </html>
